@@ -1,4 +1,6 @@
 import Resume from '../public/resume.pdf'
+import Loading from '../public/loading.jpg'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -35,7 +37,12 @@ export default function Home() {
             <br/>
           </div>
           <br/>
-          <div className = "bg-black text-white relative leading-6 px-4 py-2"> ssh@brian.seo ~ % projects </div>
+          <div className = "bg-black relative mx-auto leading-6 px-4 py-2">
+            <div className = "bg-black text-white relative leading-6 px-4 py-2"> ssh@brian.seo ~ % projects </div>
+              <Image src = {Loading} alt = "LoadingBar" className = "leading-6 px-4 py-2 mx-auto justify-center items-center"></Image>
+              <p className = "text-white text-center"> This section is currently a work in progress. Please come back later. </p>
+          </div>
+          <br/>
 
           </section>
     </main>
