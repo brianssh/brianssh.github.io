@@ -1,3 +1,6 @@
+import Resume from '../public/resume.pdf'
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <main className=" bg-white px-10">
@@ -8,8 +11,8 @@ export default function Home() {
               <li className = "px-4 py-2 border-none">Home</li>
               <li className = "px-4 py-2 border-none">Projects</li>
               <li>
-                <a href= "#" className = "px-4 py-2 border-none">Resume</a>
-                </li>
+                <Link href = {Resume} target = "_blank" className = "px-4 py-2 border-none">Resume</Link>
+              </li>
             </ul>
           </nav>
         <div className = "text-center p-10">
@@ -23,7 +26,7 @@ export default function Home() {
 
           <div className = "bg-black text-white relative leading-6 px-4 py-2"> ssh@brian.seo ~ % status </div>
           <div className = "bg-black text-white relative leading-6 px-4 py-2">
-            <a href = "https://www.gratifypay.com/"> @gratifypay </a>
+            <a href = "https://gratifypay.com/"> @gratifypay </a>
             <p> - Full Stack Developer at Gratify Pay</p>
             <p> - Worked on the back-end payments team</p>
             <br/>
@@ -31,6 +34,9 @@ export default function Home() {
             <p> - Specialization: Data Communications and Internetworking</p>
             <br/>
           </div>
+          <br/>
+          <div className = "bg-black text-white relative leading-6 px-4 py-2"> ssh@brian.seo ~ % projects </div>
+
           </section>
     </main>
   )
