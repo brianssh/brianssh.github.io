@@ -20,6 +20,17 @@ export default function Home() {
               complex problems. I&apos;m excited to learn more about the endless
               possibilities coding and technology bring to our world today.</p>
           </div>
+
+          <div className = "bg-black text-white relative leading-6 px-4 py-2"> ssh@brian.seo ~ % status </div>
+          <div className = "bg-black text-white relative leading-6 px-4 py-2">
+            <a href = "https://www.gratifypay.com/"> @gratifypay </a>
+            <p> - Full Stack Developer at Gratify Pay</p>
+            <p> - Worked on the back-end payments team</p>
+            <br/>
+            <p> BCIT CST Graduating Class of 2021 </p>
+            <p> - Specialization: Data Communications and Internetworking</p>
+            <br/>
+          </div>
           </section>
     </main>
   )
