@@ -45,7 +45,7 @@ body::before {
     rgba(0,0,0,0.03) 4px
   );
   pointer-events: none;
-  z-index: 9999;
+  z-index: 1;
 }
 
 .page-title {
@@ -380,6 +380,7 @@ body::before {
   border: 2px solid transparent;
   cursor: pointer;
   transition: border-color 0.1s, background 0.1s;
+  text-decoration: none;
 }
 
 .contact-item:hover {

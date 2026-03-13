@@ -48,7 +48,7 @@ function pressSelect() {
 
 function goToSelected() {
   if (menuItems[menuIndex] === 'resume') {
-    window.open('brianseo_resume.pdf', '_blank');
+    window.open('brianseo_resume.pdf', '_blank', 'noopener,noreferrer');
     showToast('OPENING RESUME...');
     return;
   }
