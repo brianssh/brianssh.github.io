@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brian Seo | Developer</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<div class="page-title"> PORTFOLIO v1.0 </div>
+
+<div class="gameboy">
+  <div class="top-stripe"></div>
+
+  <div class="screen-housing">
+    <div class="screen" id="screen">
+      <div class="screen-flash" id="screenFlash"></div>
+      <div class="screen-glare"></div>
+
+      <!-- BOOT PAGE -->
+      <div class="screen-content screen-page boot-screen active" id="page-boot">
+        <div class="boot-logo" style="font-size:20px;">BRIAN<br>SEO</div>
+        <div class="boot-sub" style="font-size:16px; margin-top:4px;">Software Developer</div>
+        <div class="boot-press">PRESS START</div>
+      </div>
+
+      <!-- MENU PAGE -->
+      <div class="screen-content screen-page menu-screen" id="page-menu">
+        <div class="menu-title">MAIN MENU</div>
+        <div class="menu-item selected" data-index="0" onclick="selectMenu(0)">ABOUT ME</div>
+        <div class="menu-item" data-index="1" onclick="selectMenu(1)">PROJECTS</div>
+        <div class="menu-item" data-index="2" onclick="selectMenu(2)">RESUME</div>
+        <div class="menu-item" data-index="3" onclick="selectMenu(3)">CONTACT</div>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="screen-content screen-page about-screen" id="page-about">
+        <div class="screen-header">▶ ABOUT ME</div>
+        <div class="pokedex-top">
+          <img class="about-avatar" src="brian_pixel.jpg" alt="Brian Seo">
+          <div class="pokedex-info">
+            <div class="pokedex-name">BRIAN SEO</div>
+            <div class="pokedex-type">SOFTWARE DEVELOPER</div>
+            <div class="pokedex-stat">GRAD DATE:  2027</div>
+            <div class="pokedex-stat">LOC:  CANADA</div>
+          </div>
+        </div>
+        <div class="pokedex-number">No.1998</div>
+        <div class="pokedex-entry">
+          Pursuing a Bachelor of Science in Applied Computer Science.
+          Aspiring software developer and coffee lover.
+        </div>
+      </div>
+
+      <!-- PROJECTS PAGE -->
+      <div class="screen-content screen-page projects-screen" id="page-projects">
+        <div class="screen-header">▶ PROJECTS </div>
+        <div class="project-card"> WORK IN PROGRESS</div>
+        <!-- <div class="project-card" onclick="showToast('Opening project...')">
+          <div class="project-icon"></div>
+          <div class="project-info">
+            <div class="project-name"></div>
+            <div class="project-desc">placeholder · text</div>
+          </div>
+        </div> -->
+      </div>
+
+      <!-- CONTACT -->
+      <div class="screen-content screen-page contact-screen" id="page-contact">
+        <div class="screen-header">▶ CONTACT</div>
+        <div class="contact-item" onclick="copyToClipboard('brianssh.dev@gmail.com')">
+          <span>📧</span>
+          <div>
+            <span class="contact-label">EMAIL</span>
+            <span class="contact-value">brianssh.dev@gmail.com</span>
+          </div>
+        </div>
+        <div class="contact-item" onclick="openLink('https://github.com/brianssh')">
+          <span><i class="fa-brands fa-github"></i></span>
+          <div>
+            <span class="contact-label">GITHUB</span>
+            <span class="contact-value">github.com/brianssh</span>
+          </div>
+        </div>
+        <div class="contact-item" onclick="openLink('https://www.linkedin.com/in/brianseo725')">
+          <span><i class="fa-brands fa-linkedin"></i></span>
+          <div>
+            <span class="contact-label">LINKEDIN</span>
+            <span class="contact-value">linkedin.com/in/brianseo725</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screen-label">GAMEBOY COLOR</div>
+  </div>
+
+  <!-- Indicators -->
+  <div class="indicators">
+    <div class="power-led"></div>
+    <span style="font-family:'Press Start 2P'; font-size:5px; color:#888870;">POWER</span>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div>
+      <div class="dpad">
+        <button class="dpad-btn" id="dpad-up"    onclick="dpadAction('up')">▲</button>
+        <button class="dpad-btn" id="dpad-left"  onclick="dpadAction('left')">◀</button>
+        <div class="dpad-btn"></div>
+        <button class="dpad-btn" id="dpad-right" onclick="dpadAction('right')">▶</button>
+        <button class="dpad-btn" id="dpad-down"  onclick="dpadAction('down')">▼</button>
+      </div>
+    </div>
+    <div class="ab-wrapper">
+      <div class="ab-buttons">
+        <div>
+          <button class="ab-btn btn-b" onclick="pressB()">B</button>
+          <span class="btn-label">B</span>
+        </div>
+        <div>
+          <button class="ab-btn btn-a" onclick="pressA()">A</button>
+          <span class="btn-label">A</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start / Select -->
+  <div class="start-select">
+    <div>
+      <button class="ss-btn" onclick="pressSelect()"></button>
+      <div class="ss-label">SELECT</div>
+    </div>
+    <div>
+      <button class="ss-btn" onclick="pressStart()"></button>
+      <div class="ss-label">START</div>
+    </div>
+  </div>
+
+  <!-- Speaker -->
+  <div class="speaker">
+    <div class="speaker-line"></div>
+    <div class="speaker-line"></div>
+    <div class="speaker-line"></div>
+    <div class="speaker-line"></div>
+    <div class="speaker-line"></div>
+    <div class="speaker-line"></div>
+  </div>
+
+</div>
+
+<div class="hint-bar">↑↓ D-PAD TO NAVIGATE  ·  A TO SELECT  ·  B TO BACK</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
